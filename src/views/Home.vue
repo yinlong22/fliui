@@ -2,8 +2,9 @@
     <div>
         <TopNav/>
         <div class="banner">
-            <h1>gungunUI</h1>
-            <h2>一个厉害的 ui 框架</h2>
+            <h1>flightUI2</h1>
+            <h2>一个网站快速成型的 ui 框架</h2>
+            <p>基于Vue3.0的桌面端组件库</p>
             <p class="actions">
                 <a href="https://github.com">GitHub</a>
                 <router-link to="/doc">start</router-link>
@@ -22,7 +23,10 @@
 
 <style lang="scss" scoped>
 .banner{
+    color: sandybrown;
+    margin-top: 60px;
     padding: 100px 0;
+    height: 92vh;
     display: flex;
     justify-content: center;
     align-items: center;

@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <TopNav/>
+    <div class="layout">
+        <TopNav class="nav"/>
         <div class="content">
             <aside v-if="menuVisible">
                 <h2>组件列表</h2>
@@ -31,8 +31,14 @@
                         <router-link to="/doc/collapse/">collapse组件</router-link>
                     </li>
                 </ol>
+                <div v-if="isPhone">
+                    <span><router-link to="/">主页</router-link></span>
+                    <span><router-link to="/">指南</router-link></span>
+                </div>
             </aside>
-            <main>主内容</main>
+            <main>
+                <router-view/>
+            </main>
         </div>
     </div>
 </template>
@@ -44,31 +50,80 @@
     export default {
         components: {TopNav},
         setup() {
+            const width = document.documentElement.clientWidth
+            const isPhone = width <= 500
             const menuVisible = inject<Ref<boolean>>('menu')
-            return {menuVisible}
+            return {menuVisible,isPhone}
         }
     }
 </script>
 
 <style lang="scss" scoped>
+    .layout {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+
+        > .nav {
+            flex-shrink: 0;
+        }
+
+        > .content {
+            flex-grow: 1;
+            padding-top: 60px;
+            padding-left: 156px;
+            @media (max-width: 500px) {
+                padding-left: 0;
+            }
+        }
+    }
+
+    .content {
+        display: flex;
+
+        > aside {
+            flex-shrink: 0;
+        }
+
+        > main {
+            color: #FFFFFF;
+            flex-grow: 1;
+            padding: 16px;
+            background: linear-gradient(90deg, #6464FA 0%, #4CA0FF 100%);
+        }
+    }
+
     aside {
+        border-radius: 0 0 12px 0;
         background: lightblue;
         width: 150px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        padding: 70px 16px 16px;
+        height: 100%;
+        color: slategrey;
 
         > h2 {
             margin-bottom: 4px;
         }
 
         > ol {
+            margin-bottom: 22px;
             > li {
                 padding: 4px 0;
             }
         }
-        @media (max-width: 500px) {
-            position: fixed;
-            top: 0;
-            left: 0;
-            padding: 70px 16px 16px;
+        > div:last-child {
+            color: #fc765e;
+            > span:last-child {
+                margin-left: 20px;
+            }
         }
+    }
+
+    main {
+        overflow: auto;
+        border-radius: 12px 0 0 0;
     }
 </style>
