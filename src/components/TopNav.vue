@@ -16,11 +16,11 @@
 
 <style lang="scss" scoped>
     .topNav {
-        background: linear-gradient(135deg,#FF5773,#fc765e);
         display: flex;
         padding: 16px;
-        border-radius: 4px;
-
+        background: linear-gradient(135deg,#FF5773,#fc765e);
+        position: relative;
+        z-index: 10;
         > .logo {
             max-width: 6em;
             margin-right: auto;
