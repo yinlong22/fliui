@@ -6,29 +6,29 @@
                 <h2>组件列表</h2>
                 <ol>
                     <li>
-                        <router-link to="/doc/switch/">switch组件</router-link>
+                        <router-link to="/doc/switch/">switch-开关</router-link>
                     </li>
                     <li>
-                        <router-link to="/doc/button/">button组件</router-link>
+                        <router-link to="/doc/button/">button-按钮</router-link>
                     </li>
                     <li>
                         <router-link to="/doc/dialog/">dialog组件</router-link>
                     </li>
                     <li>
-                        <router-link to="/doc/tabs/">tabs组件</router-link>
+                        <router-link to="/doc/tabs/">tabs-导航栏</router-link>
 
                     </li>
                     <li>
-                        <router-link to="/doc/toast/">toast组件</router-link>
+                        <router-link to="/doc/toast/">toast-提示层</router-link>
                     </li>
                     <li>
-                        <router-link to="/doc/input/">input组件</router-link>
+                        <router-link to="/doc/input/">input-输入框</router-link>
                     </li>
                     <li>
-                        <router-link to="/doc/popover/">popover组件</router-link>
+                        <router-link to="/doc/popover/">popover-弹出</router-link>
                     </li>
                     <li>
-                        <router-link to="/doc/collapse/">collapse组件</router-link>
+                        <router-link to="/doc/collapse/">collapse-抽屉</router-link>
                     </li>
                 </ol>
                 <div v-if="isPhone">
@@ -94,6 +94,7 @@
     }
 
     aside {
+        z-index: 2;
         border-radius: 0 0 12px 0;
         background: lightblue;
         width: 150px;
