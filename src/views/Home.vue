@@ -2,7 +2,7 @@
     <div>
         <TopNav/>
         <div class="banner">
-            <h1>flightUI 2.0</h1>
+            <h1>fliUi 2.0</h1>
             <h2>一个网站快速成型的 ui 框架</h2>
             <p>基于Vue3.0的桌面端组件库</p>
             <p class="actions">
@@ -23,7 +23,7 @@
 
 <style lang="scss" scoped>
 .banner{
-    color: sandybrown;
+    color: #fff;
     margin-top: 60px;
     padding: 100px 0;
     height: 92vh;
@@ -32,10 +32,12 @@
     align-items: center;
     flex-direction: column;
     background: linear-gradient(90deg, #6464FA 0%, #4CA0FF 100%);
+
     > .actions{
         padding: 8px 0;
         a{
             background: #fff;
+            color: #fc765e;
             display: inline-block;
             $h: 28px;
             height: $h;

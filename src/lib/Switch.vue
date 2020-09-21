@@ -1,6 +1,6 @@
 <template>
     <div>
-        <button @click="toggle" :class="{clicked:value}"><span></span></button>
+        <button @click="toggle" class="fli-switch" :class="{'fli-clicked':value}"><span></span></button>
     </div>
 </template>
 
@@ -19,10 +19,11 @@
     }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
     $h: 22px;
     $h2: $h - 4px;
-    button {
+    $color: #F7515B;
+    .fli-switch {
         height: $h;
         width: $h*2.1;
         border: none;
@@ -40,8 +41,8 @@
             border-radius: $h2/2;
             transition: all 250ms;
         }
-        &.clicked {
-            background: #F7515B;
+        &.fli-clicked {
+            background: $color;
 
             > span {
                 left: calc(100% - #{$h2} - 2px);
@@ -58,7 +59,7 @@
             }
         }
 
-        &.clicked:active {
+        &.fli-clicked:active {
             > span {
                 width: $h2+4px;
                 margin-left: -4px;

@@ -3,7 +3,7 @@
         <TopNav class="nav"/>
         <div class="content">
             <aside v-if="menuVisible">
-                <h2>组件列表</h2>
+                <h2>FliUi</h2>
                 <ol>
                     <li>
                         <router-link to="/doc/switch/">switch-开关</router-link>
@@ -53,7 +53,7 @@
             const width = document.documentElement.clientWidth
             const isPhone = width <= 500
             const menuVisible = inject<Ref<boolean>>('menu')
-            return {menuVisible,isPhone}
+            return {menuVisible, isPhone}
         }
     }
 </script>
@@ -111,12 +111,15 @@
 
         > ol {
             margin-bottom: 22px;
+
             > li {
                 padding: 4px 0;
             }
         }
+
         > div:last-child {
             color: #fc765e;
+
             > span:last-child {
                 margin-left: 20px;
             }
