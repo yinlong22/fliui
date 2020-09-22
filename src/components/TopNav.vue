@@ -2,10 +2,13 @@
     <div class="topNav">
         <div class="logo">LOGO</div>
         <ul class="menu">
-            <li>指南</li>
-            <li>投稿</li>
+            <li><a href="https://gitee.com/Ylong22/avue-plugin/tree/master">指南</a></li>
+            <li>biubiu</li>
         </ul>
-        <span class="toggleAside" v-if="isHome"><img src="../assets/menu.svg" @click="toggleMenu" alt=""></span>
+        <span class="toggleAside" v-if="isHome">
+            <img v-if="menuVisible" src="../assets/menu.svg" @click="toggleMenu" alt="">
+            <img v-if="!menuVisible" src="../assets/menu off.svg" @click="toggleMenu" alt="">
+        </span>
     </div>
 </template>
 
@@ -15,11 +18,11 @@
     export default {
         setup() {
             const menuVisible = inject<Ref<boolean>>('menu')
-            let isHome = location.hash !== "#/";
+            let isHome = location.hash !== '#/'
             const toggleMenu = () => {
                 menuVisible.value = !menuVisible.value
             }
-            return {toggleMenu,isHome}
+            return {toggleMenu, isHome, menuVisible}
         }
     }
 </script>

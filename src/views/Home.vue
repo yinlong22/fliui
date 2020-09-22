@@ -6,7 +6,7 @@
             <h2>一个网站快速成型的 ui 框架</h2>
             <p>基于Vue3.0的桌面端组件库</p>
             <p class="actions">
-                <a href="https://github.com">GitHub</a>
+                <a href="https://gitee.com/Ylong22/avue-plugin">GitHub</a>
                 <router-link to="/doc">start</router-link>
             </p>
         </div>

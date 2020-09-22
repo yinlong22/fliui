@@ -32,8 +32,8 @@
                     </li>
                 </ol>
                 <div v-if="isPhone">
-                    <span><router-link to="/">主页</router-link></span>
-                    <span><router-link to="/">指南</router-link></span>
+                    <span><a href="https://gitee.com/Ylong22/avue-plugin/tree/master">指南</a></span>
+                    <span><router-link to="/">biubiu</router-link></span>
                 </div>
             </aside>
             <main>
