@@ -13,43 +13,51 @@
             <Button background="blue">你好</Button>
             <Button background="black">你好</Button>
         </div>
-        <div>示例3</div>
+        <div>大小</div>
         <div>
-            <Button theme="button">你好</Button>
-            <Button theme="link">你好</Button>
-            <Button theme="text">你好</Button>
+            <Button theme="button">普普通</Button>
+            <Button size="longer" background="red" >长长长</Button>
+            <Button size="big" background="black">大大大</Button>
+            <Button size="small" background="blue">小小小</Button>
         </div>
-        <div>示例4</div>
+        <div>按钮等级</div>
         <div>
-            <Button theme="button">你好</Button>
-            <Button theme="link">你好</Button>
-            <Button theme="text">你好</Button>
+            <Button>普通按钮</Button>
+            <Button level="main">主要按钮</Button>
+            <Button level="danger">危险按钮</Button>
+            <Button level="danger" theme="link">危险链接按钮</Button>
+            <Button level="danger" theme="text">危险文字按钮</Button>
         </div>
-        <div>示例5</div>
+        <div>loading</div>
         <div>
-            <Button theme="button">你好</Button>
-            <Button theme="link">你好</Button>
-            <Button theme="text">你好</Button>
+            <Button loading>加载中</Button>
+            <Button v-model:loading="bool">动态加载</Button>
         </div>
-        <div>示例6</div>
+        <div>禁用</div>
         <div>
-            <Button theme="button">你好</Button>
-            <Button theme="link">你好</Button>
-            <Button theme="text">你好</Button>
+            <Button disabled>你好</Button>
         </div>
     </div>
 </template>
 
 <script lang="ts">
     import Button from '../lib/Button.vue'
+    import {ref} from 'vue'
 
     export default {
         components: {Button},
+        setup() {
+            const bool = ref(false)
+            return {bool}
+        }
     }
 </script>
 
 <style lang="scss" scoped>
     div {
         margin-top: 10px;
+    }
+    Button{
+        margin-bottom: 10px;
     }
 </style>

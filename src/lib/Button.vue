@@ -1,6 +1,7 @@
 <template>
-    <button class="fli-button" :class="classes" :disabled="disabled">
+    <button @click="load" class="fli-button" :class="classes" :disabled="disabled">
         <!--        <button v-bind="$attrs"> 指定继承事件的标签 -->
+        <span v-if="loading" class="fli-loadingIndicator"><img src="../assets/loading.svg" alt=""></span>
         <slot/>
     </button>
 </template>
@@ -25,7 +26,7 @@
             },
             level: {
                 type: String,
-                default: 'red'
+                default: 'normal'
             },
             disabled: {
                 type: Boolean,
@@ -33,22 +34,24 @@
             },
             loading: {
                 type: Boolean,
-                default: true
+                default: false
             }
         },
-        setup(props) {
-            const {theme, size, background, level, disabled, loading} = props
+        setup(props,context) {
+            const {theme, size, background, level, loading} = props
+            const load = () => {
+                context.emit('update:loading', !props.loading)
+            }
             const classes = computed(() => {
                 return {
                     [`fli-theme-${theme}`]: theme,
                     [`fli-size-${size}`]: size,
                     [`fli-background-${background}`]: background,
-                    [`fli-size-${size}`]: size,
-                    [`fli-size-${size}`]: size,
-                    [`fli-size-${size}`]: size,
+                    [`fli-level-${level}`]: level,
+                    [`fli-loading-${loading}`]: loading,
                 }
             })
-            return {classes}
+            return {classes,load}
         }
     }
 </script>
@@ -57,7 +60,11 @@
     $h: 32px;
     $border-color: #d9d9d9;
     $color: #333;
-    $blue: #40a99f;
+    $green: #40a99f;
+    $blue: #4CA0FF;
+    $red: #FF5773;
+    $black: #666666;
+    $withe: #fff;
     $radius: 4px;
     .fli-button {
         height: $h;
@@ -93,42 +100,105 @@
             background: inherit;
             border: none;
             border-radius: 0;
-            color: #FF5773;
+            color: $red;
 
             &:hover, {
-                color: #4CA0FF;
+                color: $blue;
             }
         }
 
         &.fli-theme-text {
             background: inherit;
             border: none;
-            color: #40a99f;
+            color: $blue;
         }
 
         &.fli-background-red {
-            color: white;
+            color: $withe;
             border: none;
             background: linear-gradient(-45deg, #f15c68, #f04950 100%, #f04950 0);
-            &:hover, {
+
+            &:hover, &:focus {
                 font-weight: bold;
             }
         }
+
         &.fli-background-blue {
-            color: white;
+            color: $withe;
             border: none;
-            background: #4CC2FF;
-            &:hover, {
+            background: $blue;
+
+            &:hover, &:focus {
                 font-weight: bold;
             }
         }
+
         &.fli-background-black {
-            color: white;
+            color: $withe;
             border: none;
-            background: #666666;
-            &:hover, {
+            background: $black;
+
+            &:hover, &:focus {
                 font-weight: bold;
             }
+        }
+
+        &.fli-size-small {
+            height: 20px;
+            font-size: 12px;
+            padding: 10px 3px;
+        }
+
+        &.fli-size-longer {
+            width: $h*8;
+        }
+
+        &.fli-size-big {
+            height: $h*1.5;
+            width: $h*3.5;
+        }
+
+        &.fli-level-main {
+            color: $withe;
+            border: none;
+            background: $blue;
+
+            &:hover, &:focus {
+                font-weight: bold;
+            }
+        }
+
+        &.fli-level-danger {
+            background: red;
+
+            &.fli-theme-text, &.fli-theme-link {
+                background: inherit;
+                color: red;
+            }
+        }
+
+        &[disabled] {
+            cursor: not-allowed;
+            color: grey;
+        }
+
+        > .fli-loadingIndicator {
+            img {
+                width: 12px;
+                height: 12px;
+                margin-right: 6px;
+                animation: fli-spin 1s infinite linear;
+            }
+
+        }
+    }
+
+    @keyframes fli-spin {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg)
         }
     }
 </style>
