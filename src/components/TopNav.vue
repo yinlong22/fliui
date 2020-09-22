@@ -7,7 +7,7 @@
         </ul>
         <span class="toggleAside" v-if="isHome">
             <img v-if="menuVisible" src="../assets/menu.svg" @click="toggleMenu" alt="">
-            <img v-if="!menuVisible" src="../assets/menu off.svg" @click="toggleMenu" alt="">
+            <img v-else src="../assets/menu off.svg" @click="toggleMenu" alt="">
         </span>
     </div>
 </template>
