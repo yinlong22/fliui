@@ -1,7 +1,7 @@
 <template>
     <h1>Tabs 示例</h1>
     <div>示例1</div>
-    <Tabs>
+    <Tabs v-model:selected="x">
         <Tab title="nav1">content one</Tab>
         <Tab title="nav2">content two</Tab>
     </Tabs>
@@ -10,9 +10,14 @@
 <script lang="ts">
     import Tabs from '../lib/Tabs.vue'
     import Tab from '../lib/Tab.vue'
+    import {ref} from 'vue'
 
     export default {
-        components: {Tab, Tabs}
+        components: {Tab, Tabs},
+        setup(){
+            const x = ref('nav1')
+            return {x}
+        }
     }
 </script>
 
