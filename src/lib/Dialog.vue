@@ -73,6 +73,7 @@
             background: rgba(0, 0, 0, .4);
             z-index: 11;
         }
+
         &-wrapper {
             background: white;
             color: #666666;
@@ -81,28 +82,33 @@
             min-width: 15em;
             max-width: 90%;
             width: 334px;
-            border:1px solid;
+            border: 1px solid;
             height: auto;
             position: absolute;
             left: 6%;
             top: 25%;
             z-index: 15;
-            header{
+
+            header {
                 display: flex;
                 margin: 7px;
                 justify-content: space-between;
-                img{
+
+                img {
                     width: 16px;
                     height: 33px;
                 }
             }
-            hr{
+
+            hr {
                 margin-bottom: 10px;
             }
-            main{
+
+            main {
                 margin-left: 10px;
             }
-            footer{
+
+            footer {
                 margin-left: 202px;
                 margin-bottom: 10px;
             }
