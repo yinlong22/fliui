@@ -12,7 +12,10 @@
                         <router-link to="/doc/button/">button-按钮</router-link>
                     </li>
                     <li>
-                        <router-link to="/doc/dialog/">dialog组件</router-link>
+                        <router-link to="/doc/dialog/">dialog-遮挡层</router-link>
+                    </li>
+                    <li>
+                        <router-link to="/doc/input/">input-输入框</router-link>
                     </li>
                     <li>
                         <router-link to="/doc/tabs/">tabs-导航栏</router-link>
@@ -20,9 +23,6 @@
                     </li>
                     <li>
                         <router-link to="/doc/toast/">toast-提示层</router-link>
-                    </li>
-                    <li>
-                        <router-link to="/doc/input/">input-输入框</router-link>
                     </li>
                     <li>
                         <router-link to="/doc/popover/">popover-弹出</router-link>

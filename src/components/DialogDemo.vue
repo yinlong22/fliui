@@ -1,6 +1,6 @@
 <template>
     <h1>Dialog 示例</h1>
-    <div>示例1 插槽式</div>
+    <div>插槽式</div>
     <Button @click="toggle">toggle</Button>
     <Dialog v-model:visible="x" :close-on-click-overlay="false" :ok="fn">
         <template v-slot:title>
@@ -12,7 +12,7 @@
             <p>content three</p>
         </template>
     </Dialog>
-    <div>示例2 函数式</div>
+    <div>函数式</div>
     <Button @click="showDialog">show</Button>
 </template>
 

@@ -1,12 +1,12 @@
 <template>
     <div class="fli-tabs">
         <div class="fli-tabs-nav" ref="container">
-            <div class="fli-tabs-nav-item" v-for="(item,index) in titles" :ref="el=>{if (el) navItems[index] = el}"
+            <div class="fli-tabs-nav-item" v-for="(item,index) in titles"
+                 :ref="el=>{if (item===selected) selectedItem = el}"
                  :key="index" :class="{selected: item === selected}" @click="select(item)">{{item}}
             </div>
             <div class="fli-tabs-nav-indicator" ref="indicator"></div>
         </div>
-        <hr>
         <div class="fli-tabs-content">
             <!--        因为要逐个检查类型-->
             <component class="fli-tabs-content-item" :class="{selected: item.props.title === selected}"
@@ -35,23 +35,20 @@
             })
             const select = (title: string) => {context.emit('update:selected', title)}
             //动态获取tabs的宽度
-            const navItems = ref<HTMLDivElement[]>([])
+            const selectedItem = ref<HTMLDivElement>(null)
             const indicator = ref<HTMLDivElement>(null)
             const container = ref<HTMLDivElement>(null)
             const renderIndicator = () => {
-                const divs = navItems.value
-                const result = divs.filter(div =>
-                    div.classList.contains('selected'))[0]
-                const {width} = result.getBoundingClientRect()
+                const {width} = selectedItem.value.getBoundingClientRect()
                 indicator.value.style.width = width + 'px'
                 const {left: leftContainer} = container.value.getBoundingClientRect()
-                const {left: leftResult} = result.getBoundingClientRect()
+                const {left: leftResult} = selectedItem.value.getBoundingClientRect()
                 const left = leftResult - leftContainer
                 indicator.value.style.left = left + 'px'
             }
             onMounted(renderIndicator)
             onUpdated(renderIndicator)
-            return {defaults, titles, select, navItems, indicator, container}
+            return {defaults, titles, select, selectedItem, indicator, container}
         }
     }
 </script>
@@ -83,12 +80,11 @@
             }
         }
 
-        hr {
-            margin: 6px 0;
-        }
-
         &-content {
+            border-top: 1px solid #666666;
+            margin: 6px 0;
             padding: 8px 0;
+            color: #333333;
 
             &-item {
                 display: none;
