@@ -2,8 +2,8 @@
     <h1>Tabs 示例</h1>
     <div>示例1</div>
     <Tabs v-model:selected="x">
-        <Tab title="nav1">content one</Tab>
-        <Tab title="nav2">content two</Tab>
+        <Tab title="nav">content one</Tab>
+        <Tab title="longer-nav">content two</Tab>
     </Tabs>
 </template>
 
@@ -15,7 +15,7 @@
     export default {
         components: {Tab, Tabs},
         setup(){
-            const x = ref('nav1')
+            const x = ref('nav')
             return {x}
         }
     }
