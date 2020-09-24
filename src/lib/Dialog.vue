@@ -85,10 +85,12 @@
             border: 1px solid;
             height: auto;
             position: absolute;
-            left: 6%;
+            left: 39%;
             top: 25%;
             z-index: 15;
-
+            @media (max-width: 500px) {
+                    left: 6%;
+            }
             header {
                 display: flex;
                 margin: 7px;

@@ -1,9 +1,9 @@
 <template>
     <div class="topNav">
-        <div class="logo">LOGO</div>
+        <div class="logo"><img src="../assets/logo.svg" alt=""></div>
         <ul class="menu">
-            <li><a href="https://gitee.com/Ylong22/avue-plugin/tree/master">指南</a></li>
-            <li>biubiu</li>
+            <li><router-link to="/">主页</router-link></li>
+            <li><a href="https://gitee.com/Ylong22/avue-plugin/tree/master">文档</a></li>
         </ul>
         <span class="toggleAside" v-if="isHome">
             <img v-if="menuVisible" src="../assets/menu.svg" @click="toggleMenu" alt="">
@@ -33,9 +33,10 @@
         padding: 16px;
         font-weight: bold;
         color: #FFFFFF;
-        background: linear-gradient(135deg, #FF5773, #fc765e);
+        background: linear-gradient(145deg, #FF5773, #fc765e);
         position: fixed;
         top: 0;
+        height: 57px;
         left: 0;
         width: 100%;
         z-index: 10;
@@ -43,8 +44,16 @@
         align-items: center;
 
         > .logo {
+            position: relative;
             max-width: 6em;
             margin-right: auto;
+            img{
+                position: absolute;
+                top: -18px;
+                left: -5px;
+                width: 38px;
+                height: 38px;
+            }
         }
 
         > .menu {
@@ -77,7 +86,10 @@
                 display: none
             }
             > .logo {
-                margin: 0 auto
+                margin: 0 auto;
+                img{
+                    left: -24px;
+                }
             }
         }
     }

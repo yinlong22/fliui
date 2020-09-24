@@ -17,7 +17,7 @@
 
 <script lang="ts">
     import Tab from './Tab.vue'
-    import {ref, onMounted, onUpdated} from 'vue'
+    import {ref, onMounted, watchEffect} from 'vue'
 
     export default {
         props: {
@@ -38,16 +38,16 @@
             const selectedItem = ref<HTMLDivElement>(null)
             const indicator = ref<HTMLDivElement>(null)
             const container = ref<HTMLDivElement>(null)
-            const renderIndicator = () => {
-                const {width} = selectedItem.value.getBoundingClientRect()
-                indicator.value.style.width = width + 'px'
-                const {left: leftContainer} = container.value.getBoundingClientRect()
-                const {left: leftResult} = selectedItem.value.getBoundingClientRect()
-                const left = leftResult - leftContainer
-                indicator.value.style.left = left + 'px'
-            }
-            onMounted(renderIndicator)
-            onUpdated(renderIndicator)
+            onMounted(() => {
+                watchEffect(() => {
+                    const {width} = selectedItem.value.getBoundingClientRect()
+                    indicator.value.style.width = width + 'px'
+                    const {left: leftContainer} = container.value.getBoundingClientRect()
+                    const {left: leftResult} = selectedItem.value.getBoundingClientRect()
+                    const left = leftResult - leftContainer
+                    indicator.value.style.left = left + 'px'
+                })
+            })
             return {defaults, titles, select, selectedItem, indicator, container}
         }
     }

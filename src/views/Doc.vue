@@ -32,8 +32,8 @@
                     </li>
                 </ol>
                 <div v-if="isPhone">
-                    <span><a href="https://gitee.com/Ylong22/avue-plugin/tree/master">指南</a></span>
-                    <span><router-link to="/">biubiu</router-link></span>
+                    <span><router-link to="/">主页</router-link></span>
+                    <span><a href="https://gitee.com/Ylong22/avue-plugin/tree/master">文档</a></span>
                 </div>
             </aside>
             <main>
@@ -89,7 +89,7 @@
             color: #FFFFFF;
             flex-grow: 1;
             padding: 16px;
-            background: linear-gradient(90deg, #6464FA 0%, #4CA0FF 100%);
+            background: linear-gradient(145deg, #6464FA 0%, #4CA0FF 100%);
         }
     }
 
