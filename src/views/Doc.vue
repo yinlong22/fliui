@@ -2,7 +2,7 @@
     <div class="layout">
         <TopNav class="nav"/>
         <div class="content">
-            <aside v-if="menuVisible">
+            <aside :class="!menuVisible">
                 <h2>FliUi</h2>
                 <ol>
                     <li>
@@ -95,16 +95,21 @@
 
     aside {
         z-index: 2;
-        border-radius: 0 0 12px 0;
         background: lightblue;
-        width: 150px;
+        width: 139px;
         position: fixed;
         top: 0;
         left: 0;
         padding: 70px 16px 16px;
         height: 100%;
         color: slategrey;
-
+        @media (max-width: 500px) {
+            left: -150px;
+            &.false{
+                left: 0;
+            }
+            transition: all 250ms;
+        }
         > h2 {
             margin-bottom: 4px;
         }
