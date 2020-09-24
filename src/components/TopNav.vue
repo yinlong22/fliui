@@ -1,6 +1,6 @@
 <template>
     <div class="topNav">
-        <div class="logo"><img src="../assets/logo.svg" alt=""></div>
+        <div class="logo"><img src="../assets/F.svg" alt=""><img src="../assets/L.svg" alt=""><img src="../assets/i.svg" alt=""></div>
         <ul class="menu">
             <li><router-link to="/">主页</router-link></li>
             <li><a href="https://gitee.com/Ylong22/avue-plugin/tree/master">文档</a></li>
@@ -47,12 +47,26 @@
             position: relative;
             max-width: 6em;
             margin-right: auto;
-            img{
+            img:first-child{
                 position: absolute;
                 top: -18px;
-                left: -5px;
+                left: -13px;
                 width: 38px;
                 height: 38px;
+            }
+            img:nth-child(2){
+                position: absolute;
+                top: -18px;
+                left: -2px;
+                width: 38px;
+                height: 38px;
+            }
+            img:last-child{
+                position: absolute;
+                top: -9px;
+                left: 18px;
+                width: 15px;
+                height: 15px;
             }
         }
 
@@ -87,9 +101,6 @@
             }
             > .logo {
                 margin: 0 auto;
-                img{
-                    left: -24px;
-                }
             }
         }
     }

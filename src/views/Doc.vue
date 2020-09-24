@@ -86,10 +86,10 @@
         }
 
         > main {
-            color: #FFFFFF;
+            color: #666666;
             flex-grow: 1;
             padding: 16px;
-            background: linear-gradient(145deg, #6464FA 0%, #4CA0FF 100%);
+            background: #f5f5f5;
         }
     }
 

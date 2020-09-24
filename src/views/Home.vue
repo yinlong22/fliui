@@ -36,11 +36,11 @@
         align-items: center;
         flex-direction: column;
         background: linear-gradient(145deg, #6464FA 0%, #4CA0FF 100%);
-
+        overflow: hidden;
 
         > .actions {
             padding: 8px 0;
-
+            position: relative;
             a {
                 background: #02bcb0;
                 color: #fff;
@@ -50,12 +50,34 @@
                 padding: 2px 8px;
                 margin: 0 10px;
             }
+            &.actions::before {
+                content: '';
+                position: absolute;
+                display: block;
+                bottom: -834px;
+                right: -1500px;
+                height: 900px;
+                width: 2000px;
+                border-radius: 57%;
+                background: linear-gradient(145deg, #6464FA 0%, #02bcb0 100%);
+            }
+            &.actions::after {
+                content: '';
+                position: absolute;
+                display: block;
+                bottom: -891px;
+                right: -270px;
+                height: 900px;
+                width: 2000px;
+                border-radius: 57%;
+                background: linear-gradient(145deg, #6464FA 0%, #02bcb0 100%);
+            }
         }
 
         > .features {
             margin-top: 32px;
             display: inline-flex;
-
+            z-index: 2;
             li {
                 display: inline-flex;
                 justify-content: center;
@@ -73,6 +95,7 @@
                 }
             }
         }
+
         @media (max-width: 500px) {
             > .features {
                 margin-top: 32px;
