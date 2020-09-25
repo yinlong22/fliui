@@ -104,7 +104,7 @@
     </div>
 </template>
 <script lang="ts">
-import Button from '../lib/Button.vue'
+import Button from 'fli-ui'
 import {ref} from 'vue'
 export default {
    components: {Button},

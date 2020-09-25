@@ -15,11 +15,11 @@
                         <router-link to="/doc/dialog/">dialog-遮挡层</router-link>
                     </li>
                     <li>
-                        <router-link to="/doc/input/">input-输入框</router-link>
-                    </li>
-                    <li>
                         <router-link to="/doc/tabs/">tabs-导航栏</router-link>
 
+                    </li>
+                    <li>
+                        <router-link to="/doc/input/">input-输入框</router-link>
                     </li>
                     <li>
                         <router-link to="/doc/toast/">toast-提示层</router-link>
@@ -29,6 +29,21 @@
                     </li>
                     <li>
                         <router-link to="/doc/collapse/">collapse-抽屉</router-link>
+                    </li>
+                    <li>
+                        <router-link to="/doc/collapse/">playLine-轮播</router-link>
+                    </li>
+                    <li>
+                        <router-link to="/doc/toast/">page-翻页</router-link>
+                    </li>
+                    <li>
+                        <router-link to="/doc/popover/">start-打星</router-link>
+                    </li>
+                    <li>
+                        <router-link to="/doc/collapse/">upload-上传</router-link>
+                    </li>
+                    <li>
+                        <router-link to="/doc/collapse/">play-播放</router-link>
                     </li>
                 </ol>
                 <div v-if="isPhone">
@@ -95,7 +110,7 @@
 
     aside {
         z-index: 2;
-        background: lightblue;
+        background: #090622;
         width: 139px;
         position: fixed;
         top: 0;

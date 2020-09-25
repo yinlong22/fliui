@@ -22,7 +22,6 @@ ul, ol {
 }
 
 
-
 h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
 }
@@ -47,8 +46,8 @@ code {
     display: block;
   }
   
-  transition: opacity 1s;
   @media (max-width: 500px) {
     white-space: pre-line;
   }
+  transition: opacity 1s;
 }
