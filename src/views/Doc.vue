@@ -132,6 +132,7 @@
     }
 
     main {
+        margin-left: -8px;
         overflow: auto;
         border-radius: 12px 0 0 0;
     }

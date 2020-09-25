@@ -15,20 +15,40 @@ ul, ol {
   justify-content: space-between;
   align-items: center
 }
-.fli-showCode{
+
+.fli-showCode {
   display: flex;
   justify-content: space-between;
 }
-code{
-  background: lightblue;
-  white-space: pre-wrap;
-  margin-top: 12px;
-}
+
+
+
 h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
 }
 
 body {
-  font-size: 12px;
+  font-size: 16px;
   font-family: sans-serif;
+}
+
+code {
+  font-size: 12px;
+  background: lightblue;
+  white-space: pre-wrap;
+  margin-top: 12px;
+  border-radius: 3px;
+  opacity: 0;
+  visibility: hidden;
+  
+  &.show {
+    opacity: 1;
+    visibility: visible;
+    display: block;
+  }
+  
+  transition: opacity 1s;
+  @media (max-width: 500px) {
+    white-space: pre-line;
+  }
 }

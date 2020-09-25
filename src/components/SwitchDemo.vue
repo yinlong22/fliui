@@ -2,7 +2,7 @@
     <div>
         <h1>switch示例</h1>
         <div class="fli-addCode"><span>颜色</span>
-            <Button @click="codeVisible" background="black">代码</Button>
+            <Button @click="codeVisible" background="black">代码展示</Button>
         </div>
         <div class="fli-showCode">
             <Switch v-model:value="bool"/>
@@ -11,7 +11,7 @@
             <span></span><span></span><span></span>
         </div>
         <code ref="className">{{code}}</code>
-        </div>
+    </div>
 </template>
 
 <script lang="ts">
@@ -27,9 +27,12 @@
             const bool3 = ref(true)
             const code =
 `<template>
-<Switch v-model:value="bool"/>
-<Switch theme="red" v-model:value="bool2"/>
-<Switch theme="blueL" v-model:value="bool3"/>
+    <div>
+        <div>颜色</div>
+        <Switch v-model:value="bool"/>
+        <Switch theme="red" v-model:value="bool2"/>
+        <Switch theme="blueL" v-model:value="bool3"/>
+    </div>
 </template>
 <script lang="ts">
 import Switch from '../lib/Switch.vue'
@@ -54,17 +57,3 @@ export default {
         }
     }
 </script>
-
-<style lang="scss" scoped>
-    code {
-        border-radius: 3px;
-        opacity: 0;
-        visibility: hidden;
-        &.show {
-            opacity: 1;
-            visibility: visible;
-            display: block;
-        }
-        transition:opacity 1s;
-    }
-</style>
