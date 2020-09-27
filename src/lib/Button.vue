@@ -96,6 +96,25 @@
             }
         }
 
+        &.fli-theme-wired{
+            width: 200px;
+            height: 100px;
+            font-family: "Neucha",sans-serif;
+            border-radius: 52px 40px 100px 26px / 155px 250px 30px 160px;
+            box-shadow: 15px 28px 25px -18px rgba(0,0,0,0.2);
+            background: transparent;
+            border: 2px solid #41403e;
+            color: #41403e;
+            display: inline-block;
+            font-size: 1rem;
+            text-align: center;
+            align-items: flex-start;
+            &:hover, &:focus {
+                color: $blue;
+                border-color: $blue;
+            }
+        }
+
         &.fli-theme-link {
             background: inherit;
             border: none;
@@ -144,9 +163,8 @@
         }
 
         &.fli-size-small {
-            height: 20px;
-            font-size: 12px;
-            padding: 10px 3px;
+            height: auto;
+            padding: 2px;
         }
 
         &.fli-size-longer {

@@ -51,7 +51,7 @@
                     <span><a href="https://gitee.com/Ylong22/avue-plugin/tree/master">文档</a></span>
                 </div>
             </aside>
-            <main>
+            <main @click="hideMenu">
                 <router-view/>
             </main>
         </div>
@@ -68,7 +68,12 @@
             const width = document.documentElement.clientWidth
             const isPhone = width <= 500
             const menuVisible = inject<Ref<boolean>>('menu')
-            return {menuVisible, isPhone}
+            const hideMenu = () => {
+                if (width <= 500) {
+                    menuVisible.value = false
+                }
+            }
+            return {menuVisible, isPhone, hideMenu}
         }
     }
 </script>
@@ -105,6 +110,9 @@
             flex-grow: 1;
             padding: 16px;
             background: #f5f5f5;
+            margin-left: -8px;
+            overflow: auto;
+            border-radius: 12px 0 0 0;
         }
     }
 
@@ -120,11 +128,12 @@
         color: slategrey;
         @media (max-width: 500px) {
             left: -150px;
-            &.false{
+            &.false {
                 left: 0;
             }
             transition: all 250ms;
         }
+
         > h2 {
             margin-bottom: 4px;
         }
@@ -144,11 +153,5 @@
                 margin-left: 20px;
             }
         }
-    }
-
-    main {
-        margin-left: -8px;
-        overflow: auto;
-        border-radius: 12px 0 0 0;
     }
 </style>

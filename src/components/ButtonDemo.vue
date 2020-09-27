@@ -9,6 +9,7 @@
             <Button theme="button">按钮</Button>
             <Button theme="link">链接</Button>
             <Button theme="text">文本</Button>
+            <Button theme="wired">wired big button</Button>
         </div>
         <div>背景</div>
         <div>
@@ -65,6 +66,7 @@
             <Button theme="button">按钮</Button>
             <Button theme="link">链接</Button>
             <Button theme="text">文本</Button>
+            <Button theme="wired">wired big button</Button>
         </div>
 
         <div>背景</div>
