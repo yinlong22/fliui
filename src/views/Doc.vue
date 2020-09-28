@@ -6,6 +6,9 @@
                 <h2>FliUi</h2>
                 <ol>
                     <li>
+                        <router-link to="/doc/">快速开始-></router-link>
+                    </li>
+                    <li>
                         <router-link to="/doc/switch/">switch-开关</router-link>
                     </li>
                     <li>

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <p>213123</p>
+        <p>安装依赖</p>
     </div>
 </template>
 
